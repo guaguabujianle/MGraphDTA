@@ -24,4 +24,5 @@ scikit_learn==0.24.2
 ## Step-by-step running:  
 ### 0.Visulization using Grad-AAM
 First, download the ToxCast dataset from https://drive.google.com/file/d/1K21HJI72fmhryjXka_ijCrSgrCdcq2Or/view?usp=sharing, copy full_toxcast folder into MGraphDTA/visualization/data.  
-Second, cd MGraphDTA/visualization, and run preprocessing.py using command [python preprocessing.py]
+Second, cd MGraphDTA/visualization, and run preprocessing.py using 
+`python preprocessing.py`
