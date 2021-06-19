@@ -20,3 +20,6 @@ numpy==1.20.1
 ipython==7.24.1  
 rdkit==2009.Q1-1  
 scikit_learn==0.24.2  
+
+## Step-by-step running:  
+### 0.Visulization using Grad-AAM
