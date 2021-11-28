@@ -116,7 +116,7 @@ scikit_learn==0.24.2
 
 ### 2. Visualization using Grad-AAM
 
-We provide a example of how to visulize MGNN using Grad-AAM
+We provide an example of how to visualize MGNN using Grad-AAM.
 
 - First, download the ToxCast dataset from https://drive.google.com/file/d/1K21HJI72fmhryjXka_ijCrSgrCdcq2Or/view?usp=sharing, copy full_toxcast folder into MGraphDTA/visualization/data.  
 - Second, cd MGraphDTA/visualization, and run preprocessing.py using  
