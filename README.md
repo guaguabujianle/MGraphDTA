@@ -22,7 +22,7 @@ ipython==7.24.1
 rdkit==2009.Q1-1  
 scikit_learn==0.24.2  
 
-## Descriptions of folders and files in the DEEPScreen repository
+## Descriptions of folders and files in the MGraphDTA repository
 * **classification** folder includes the source code of MGraphDTA for classification tasks in the Human and *C.elegans* datasets.
   + **data** folder contains raw data of the Human and *C.elegans* datasets.
   + **log** folder includes the source codes to record the training process.
@@ -33,6 +33,9 @@ scikit_learn==0.24.2
   + **test.py**, test a trained model and print the results.
   + **train.py**, train MGraphDTA model.
   + **utils.py** file includes useful tools for model training.
+* **filtered_davis** folder includes the source code of MGraphDTA for regression task in the filtered davis dataset.
+* **regression** folder includes the source code of MGraphDTA for regression tasks in the davis and KIBA datasets.
+* **visualization** folder includes the source code for visualization of a trained model.
 
 ## Step-by-step running:  
 ### 0.Visulization using Grad-AAM
