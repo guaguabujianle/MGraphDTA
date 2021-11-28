@@ -3,6 +3,7 @@
 ## Dataset
 All data used in this paper are publicly available can be accessed here:  
 - Davis and KIBA: https://github.com/hkmztrk/DeepDTA/tree/master/data  
+- Filtered Davis: https://github.com/cansyl/MDeePred
 - Human and *C.elegans*: https://github.com/masashitsubaki/CPI_prediction  
 - ToxCast: https://github.com/simonfqy/PADME  
 Or you can download the datasets in https://drive.google.com/file/d/1K21HJI72fmhryjXka_ijCrSgrCdcq2Or/view?usp=sharing  
@@ -20,6 +21,18 @@ numpy==1.20.1
 ipython==7.24.1  
 rdkit==2009.Q1-1  
 scikit_learn==0.24.2  
+
+## Descriptions of folders and files in the DEEPScreen repository
+* **classification** folder includes the source code of MGraphDTA for classification tasks in the Human and *C.elegans* datasets.
+  + **data** folder contains raw data of the Human and *C.elegans* datasets.
+  + **log** folder includes the source codes to record the training process.
+  + **dataset.py** file prepares the data for training.
+  + **metrics.py** contains a series of metrics to evalute the model performances.
+  + **model.py**, the implementation of MGraphDTA can be found in here.
+  + **preprocessing.py**, a file that preprocesses the raw data into graph format and should be executed before model trianing.
+  + **test.py**, test a trained model and print the results.
+  + **train.py**, train MGraphDTA model.
+  + **utils.py** file includes useful tools for model training.
 
 ## Step-by-step running:  
 ### 0.Visulization using Grad-AAM
