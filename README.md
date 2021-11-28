@@ -23,7 +23,7 @@ rdkit==2009.Q1-1
 scikit_learn==0.24.2  
 
 ## Descriptions of folders and files in the MGraphDTA repository
-* **classification** folder includes the source code of MGraphDTA for classification tasks in the Human and *C.elegans* datasets.
+* **classification** folder includes the source code of MGraphDTA for classification tasks in the Human and *C.elegans* datasets. Note that this folder already contains raw data and can be used directly.
   + **data** folder contains raw data of the Human and *C.elegans* datasets.
   + **log** folder includes the source codes to record the training process.
   + **dataset.py** file prepares the data for training.
@@ -33,9 +33,9 @@ scikit_learn==0.24.2
   + **test.py**, test a trained model and print the results.
   + **train.py**, train MGraphDTA model.
   + **utils.py** file includes useful tools for model training.
-* **filtered_davis** folder includes the source code of MGraphDTA for regression task in the filtered davis dataset.
-* **regression** folder includes the source code of MGraphDTA for regression tasks in the davis and KIBA datasets.
-* **visualization** folder includes the source code for visualization of a trained model.
+* **filtered_davis** folder includes the source code of MGraphDTA for regression task in the filtered davis dataset. Note that this folder already contains raw data and can be used directly. The training, validation, and test sets are extactly the same as MDeePred.
+* **regression** folder includes the source code of MGraphDTA for regression tasks in the davis and KIBA datasets. Note that this folder do not contain raw data. The raw data can be downloaded from https://drive.google.com/file/d/1K21HJI72fmhryjXka_ijCrSgrCdcq2Or/view?usp=sharing  
+* **visualization** folder includes the source code for visualization of a trained model. Note that this folder incudes a pretrained model for visualization. The raw data can be downloaded from https://drive.google.com/file/d/1K21HJI72fmhryjXka_ijCrSgrCdcq2Or/view?usp=sharing.
 
 ## Step-by-step running:  
 ### 0.Visulization using Grad-AAM
