@@ -124,9 +124,10 @@ def main():
                 running_loss.reset()
                 running_cindex.reset()
 
+                val_loss = val(model, criterion, val_loader, device)
                 test_loss = val(model, criterion, test_loader, device)
 
-                msg = "epoch-%d, loss-%.4f, cindex-%.4f, test_loss-%.4f" % (global_epoch, epoch_loss, epoch_cindex, test_loss)
+                msg = "epoch-%d, loss-%.4f, cindex-%.4f, val_loss-%.4f, test_loss-%.4f" % (global_epoch, epoch_loss, epoch_cindex, val_loss, test_loss)
                 logger.info(msg)
 
                 if test_loss < running_best_mse.get_best():
