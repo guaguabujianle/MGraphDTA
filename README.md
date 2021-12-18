@@ -1,5 +1,5 @@
 # MGraphDTA: Deep Multiscale Graph Neural Network for Explainable Drug-target binding affinity Prediction
-
+This work has been accepted by Chemical Science.
 ## Dataset
 
 All data used in this paper are publicly available can be accessed here:  
