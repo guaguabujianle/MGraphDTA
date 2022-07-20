@@ -1,5 +1,8 @@
 # MGraphDTA: Deep Multiscale Graph Neural Network for Explainable Drug-target binding affinity Prediction
-This work has been accepted by Chemical Science.
+
+## Note
+The concordance index (CI) is an important metric for performance evaluation of DTA prediction. However, the implemention of CI for DeepDTA and GraphDTA are inefficient. Here, we implement it in a high-efficiency way. Please see regression/metrics.py for details. One may also try to incorporate CI into the loss function to optimize it. 
+
 ## Dataset
 
 All data used in this paper are publicly available can be accessed here:  
