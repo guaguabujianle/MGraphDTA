@@ -59,13 +59,22 @@ def clourMol(mol,highlightAtoms_p=None,highlightAtomColors_p=None,highlightBonds
 
 def main():
     device = torch.device('cuda:0')
-
     fpath = os.path.join('data', 'full_toxcast')
     test_df = pd.read_csv(os.path.join(fpath, 'raw', 'data_test.csv'))
     test_set = GNNDataset(fpath, train=False)
 
+    model_dict = torch.load('pretrained_model/epoch-173, loss-0.1468, cindex-0.8998, test_loss-0.1750.pt')
+    for key, val in model_dict.copy().items():
+        if 'lin_l' in key:
+            new_key = key.replace('lin_l', 'lin_rel')
+            model_dict[new_key] = model_dict.pop(key)
+        elif 'lin_r' in key:
+            new_key = key.replace('lin_r', 'lin_root')
+            model_dict[new_key] = model_dict.pop(key)
+    device = torch.device('cuda:0')
     model = MGraphDTA(3, 25 + 1, embedding_size=128, filter_num=32, out_dim=1).to(device)
-    load_model_dict(model, 'pretrained_model/epoch-173, loss-0.1468, cindex-0.8998, test_loss-0.1750.pt')
+    model.load_state_dict(model_dict)
+
     gradcam = GradAAM(model, module=model.ligand_encoder.features.transition3)
 
     bottom = cm.get_cmap('Blues_r', 256)
