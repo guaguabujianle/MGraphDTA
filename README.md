@@ -35,7 +35,7 @@ scikit_learn==0.24.2
   + **log** folder includes the source codes to record the training process.
   + **dataset.py** file prepares the data for training.
   + **metrics.py** contains a series of metrics to evalute the model performances.
-  + **model.py**, the implementation of MGraphDTA can be found in here.
+  + **model.py**, the implementation of MGraphDTA can be found here.
   + **preprocessing.py**, a file that preprocesses the raw data into graph format and should be executed before model trianing.
   + **test.py**, test a trained model and print the results.
   + **train.py**, train MGraphDTA model.
