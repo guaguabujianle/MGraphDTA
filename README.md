@@ -1,7 +1,7 @@
 # MGraphDTA: Deep Multiscale Graph Neural Network for Explainable Drug-target binding affinity Prediction
 
 ## Note
-The concordance index (CI) is an important metric for performance evaluation of DTA prediction. However, the implementation of CI for DeepDTA and GraphDTA are inefficient. Here, we implement it in a high-efficiency way. Please see regression/metrics.py for details. Due to the lower computational cost of our implementation, you can also try to incorporate CI into the loss function to optimize it. 
+The Concordance Index (CI) plays a crucial role in evaluating the performance of drug-target affinity (DTA) predictions. Despite its importance, the current implementations within DeepDTA and GraphDTA models suffer from inefficiencies. In this work, we have developed a high-efficiency approach to calculate the CI, detailed in regression/metrics.py. Our optimized method significantly reduces computational costs, making it feasible to integrate CI directly into the loss function for optimization purposes.
 
 ## Dataset
 
