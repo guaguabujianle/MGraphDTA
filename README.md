@@ -1,17 +1,17 @@
-# MGraphDTA: Deep Multiscale Graph Neural Network for Explainable Drug-target binding affinity Prediction
+# MGraphDTA: Deep Multiscale Graph Neural Network for Explainable Drug-target Binding Affinity Prediction
 
 ## Note
-The Concordance Index (CI) plays a crucial role in evaluating the performance of drug-target affinity (DTA) predictions. Despite its importance, the current implementations within DeepDTA and GraphDTA models suffer from inefficiencies. In this work, we have developed a high-efficiency approach to calculate the CI, detailed in regression/metrics.py. Our optimized method significantly reduces computational costs, making it feasible to integrate CI directly into the loss function for optimization purposes.
+The Concordance Index (CI) plays a crucial role in evaluating the performance of drug-target affinity (DTA) predictions. Despite its importance, the current implementations within DeepDTA and GraphDTA models suffer from inefficiencies. In this work, we have developed a high-efficiency approach to calculate the CI, which is detailed in regression/metrics.py. Our optimized method significantly reduces computational costs, making it feasible to integrate CI directly into the loss function for optimization purposes.
 
 ## Dataset
 
-All data used in this paper are publicly available can be accessed here:  
+All data used in this paper are publicly available and can be accessed here:  
 
 - Davis and KIBA: https://github.com/hkmztrk/DeepDTA/tree/master/data  
 - Filtered Davis: https://github.com/cansyl/MDeePred
 - Human and *C.elegans*: https://github.com/masashitsubaki/CPI_prediction  
 - ToxCast: https://github.com/simonfqy/PADME  
-  Or you can download the datasets in https://drive.google.com/file/d/1K21HJI72fmhryjXka_ijCrSgrCdcq2Or/view?usp=sharing  
+  Or you can download the datasets at https://zenodo.org/records/13235781
 
 ## Requirements  
 
@@ -34,16 +34,16 @@ scikit_learn==0.24.2
   + **data** folder contains raw data of the Human and *C.elegans* datasets.
   + **log** folder includes the source codes to record the training process.
   + **dataset.py** file prepares the data for training.
-  + **metrics.py** contains a series of metrics to evalute the model performances.
+  + **metrics.py** contains a series of metrics to evaluate the model performances.
   + **model.py**, the implementation of MGraphDTA can be found here.
-  + **preprocessing.py**, a file that preprocesses the raw data into graph format and should be executed before model trianing.
-  + **test.py**, test a trained model and print the results.
+  + **preprocessing.py**, a file that preprocesses the raw data into graph format and should be executed before model training.
+  + **test.py**, test a trained model, and print the results.
   + **train.py**, train MGraphDTA model.
   + **utils.py** file includes useful tools for model training.
-* **filtered_davis** folder includes the source code of MGraphDTA for regression task in the filtered davis dataset. Note that this folder already contains raw data and can be used directly. The training, validation, and test sets are extactly the same as MDeePred.
-* **regression** folder includes the source code of MGraphDTA for regression tasks in the davis and KIBA datasets. Note that this folder do not contain raw data. The raw data can be downloaded from https://drive.google.com/file/d/1K21HJI72fmhryjXka_ijCrSgrCdcq2Or/view?usp=sharing  
-* **visualization** folder includes the source code for visualization of a trained model. Note that this folder incudes a pretrained model for visualization. The raw data can be downloaded from https://drive.google.com/file/d/1K21HJI72fmhryjXka_ijCrSgrCdcq2Or/view?usp=sharing.
-  * **visualization_mgnn.py**, this file includes algorithms that can produce heatmaps to reveal how MGraphDTA makes decisions. The core of this file is GradAAM class that takes a model and a module (layer) that you want to visualize as input where the module is chosen as the last layer of MGNN in our experiments. You can also try to visualize other layers. 
+* **filtered_davis** folder includes the source code of MGraphDTA for regression task in the filtered Davis dataset. Note that this folder already contains raw data and can be used directly. The training, validation, and test sets are exactly the same as MDeePred.
+* **regression** folder includes the source code of MGraphDTA for regression tasks in the Davis and KIBA datasets. Note that this folder does not contain raw data. The raw data can be downloaded from https://drive.google.com/file/d/1K21HJI72fmhryjXka_ijCrSgrCdcq2Or/view?usp=sharing  
+* **visualization** folder includes the source code for visualization of a trained model. Note that this folder includes a pre-trained model for visualization. The raw data can be downloaded from https://drive.google.com/file/d/1K21HJI72fmhryjXka_ijCrSgrCdcq2Or/view?usp=sharing.
+  * **visualization_mgnn.py**, this file includes algorithms that can produce heatmaps to reveal how MGraphDTA makes decisions. The core of this file is the GradAAM class that takes a model and a module (layer) that you want to visualize as input where the module is chosen as the last layer of MGNN in our experiments. You can also try to visualize other layers. 
 
 ## Step-by-step running:  
 
@@ -54,7 +54,7 @@ scikit_learn==0.24.2
 - First, cd MGraphDTA/filtered_davis, and run preprocessing.py using  
   `python preprocessing.py`  
 
-  Running preprocessing.py convert the raw data into graph format.
+  Running preprocessing.py converts the raw data into graph format.
 
 - Second, run train.py using 
   `python train.py --fold 0 --save_model` 
@@ -83,14 +83,14 @@ scikit_learn==0.24.2
   `Reading fold_0 from data/filtered_davis
   test_rmse:0.6973, test_cindex:0.7438, test_spearm:0.6642`
 
-* To train MGraphDTA in your own datasets, please organize your data as the format shown in data/filtered_davis/raw/data.csv and provide a data/filtered_davis/warm.kfold file to describle the train/val/test split index.
+* To train MGraphDTA in your own datasets, please organize your data in the format shown in data/filtered_davis/raw/data.csv and provide a data/filtered_davis/warm.kfold file to describe the train/val/test split index.
 
 #### 1.2 regression folder
 
 - First, cd MGraphDTA/regression, and run preprocessing.py using  
   `python preprocessing.py`  
 
-  Running preprocessing.py convert the raw data into graph format.
+  Running preprocessing.py converts the raw data into graph format.
 
 - Second, run train.py using 
   `python train.py --dataset davis --save_model` 
@@ -126,5 +126,5 @@ We provide an example of how to visualize MGNN using Grad-AAM.
   `python preprocessing.py`  
 - Third, run visualization_mgnn.py using  
   `python visualization_mgnn.py`  
-  and you will the visualization results in MGraphDTA/visualization/results folders. Note that MGraphDTA/visualization/pretrained_model folder contains a pre-trained model that can be used to produce heatmaps. If you want to test Grad-AAM in your own model, please replace this pre-trained model with your own one and modify the path in the visualization_mgnn.py file.
+  and you will see the visualization results in MGraphDTA/visualization/results folders. Note that MGraphDTA/visualization/pretrained_model folder contains a pre-trained model that can be used to produce heatmaps. If you want to test Grad-AAM in your own model, please replace this pre-trained model with your own one and modify the path in the visualization_mgnn.py file.
 
